@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="icon" href="../static/assets/logo1.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <style>
+        @keyframes glowing {
+            0% { color: white; }
+            50% { color: #ffffff44; }
+            100% { color: white; }
+        }
+
+        .glow-text {
+            animation: glowing 2s infinite;
+        }
+        
+        .small-textarea {
+            height: 150px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .small-textarea::placeholder {
+            color: white;
+            opacity: 0.5;
+        }
+
+        #date-time {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            color: white;
+            animation: moveText 20s linear infinite;
+        }
+
+        #scrolling-text-container {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            color: rgb(151, 26, 26);
+            background-color:white;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        #scrolling-text {
+            display: inline-block;
+            padding: 0 10px;
+            animation: scrollText 20s linear infinite;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .centered-footer {
+            position: fixed;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center; /* Mengatur posisi tengah secara horizontal */
+            align-items: center; /* Mengatur posisi tengah secara vertikal */
+            background-color: black;
+            padding: 10px;
+            margin-top: 0.5cm;
+            margin-left: 0.5cm;
+        }
+
+        .menu-item {
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-item:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body style="background-color:black;">
+    <div class="col-md-12" style="margin-top: 1cm;"></div>
+        <div class="menu"> <!-- Pindahkan menu ke div ini -->
+            <a class="menu-item" href="/about" style="color: white;">Tentang Kami</a>
+            <a class="menu-item" href="/artikel" style="color: white;">Berita Terkait</a>
+        </div>
+    </div>
+
+    <div class="col-md-12" style="margin-top: 0.5cm;">
+        <center>
+            <img src="../static/assets/logo2.png" width="50%" style="margin-bottom: 0.5cm;">
+            <h3 class="glow-text">Sistem Deteksi Hoaks Kabupaten Tangerang</h3>
+        </center>
+    </div>
+   
+    <div class="col-md-12" style="margin-top: 1cm;">
+        <form action="{{url_for('result')}}" method="POST">
+            <div class="form-group">
+                <center>
+                    <label for="textArea_title" class="glow-text">Deteksi Berita Hoaks</label>
+                </center>
+                <textarea class="form-control small-textarea" id="textArea_title" rows="2" style="margin-bottom: 0.5cm;" name="message" placeholder="Isi disini"></textarea>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Cek Fakta</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="date-time"></div>
+
+    <footer class="footer" style="text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></footer>
+    
+    <center>
+        <p style="color: whitesmoke;">
+            <b>Universitas Insan Pembangunan Indonesia</b>
+            <span>&copy; 2023 Hak Cipta Dwi ayu k. All rights reserved.</span>
+        </p>
+    </center>
+</footer>
+    
+    <script>
+        function showDateTime() {
+            var now = new Date();
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+            var dateTimeString = now.toLocaleDateString('id-ID', options);
+            document.getElementById('date-time').textContent = dateTimeString;
+        }
+
+        setInterval(showDateTime, 1000);
+    </script>
+</body>
+
+</html>

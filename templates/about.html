@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tentang Kami</title>
+    <link rel="icon" href="../static/assets/logo1.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <style>
+        /* CSS khusus untuk halaman About */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #33ccff, #ff99cc);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1, p {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Home</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center mt-5">Tentang Kami</h1>
+                <hr>
+                <p>Ini merupakan sistem prediksi/deteksi berita hoaks. Bekerja sama dengan Diskominfo Kab. Tangerang.</p>    
+                <p> Bekerja sama dengan Diskominfo Kab. Tangerang, Data yang tersedia di Database sistem ini merupakan hasil yang akurat.</p>
+                <p>Sistem deteksi berita hoaks ini masih dalam tahap pengembangan untuk menjadi sistem yang lebih baik</p>
+                <p>Sistem ini diharapkan mampu memberi manfaat kepada khalayak dalam memerangi berita-berita hoaks khususnya di Kabupaten Tangerang.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center text-white">
+                        <b>Universitas Insan Pembangunan Indonesia</b> <br>
+                        &copy; 2023 Hak Cipta Dwi Ayu K. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>
